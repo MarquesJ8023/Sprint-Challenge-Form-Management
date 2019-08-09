@@ -72,5 +72,3 @@ import * as Yup from 'yup';
       })(UserForm);
       
 export default FormikUserRegistration;
-
-

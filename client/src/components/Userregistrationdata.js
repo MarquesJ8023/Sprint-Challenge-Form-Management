@@ -7,11 +7,11 @@ class UserRegistrationData extends React.Component {
       super();
       // we would not have access to `this` w/out you super!
       this.state = {
-        user: {
-            "error": "false",
-            "message": "User created successfully",
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTYzNDc2NTc0LCJleHAiOjE1NjM0ODAxNzR9.pIkjFgRRbrrg8j38YGiWpMlw0wgTWRfZmIIMAeFLQcw"
-        },
+        users: {},
+        "error": "false",
+        "message": "User created successfully",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTYzNDc2NTc0LCJleHAiOjE1NjM0ODAxNzR9.pIkjFgRRbrrg8j38YGiWpMlw0wgTWRfZmIIMAeFLQcw"
+        }
     };
 }
     // state = {}
@@ -32,6 +32,9 @@ class UserRegistrationData extends React.Component {
       return (
         <div>
           {this.state.users.map(u => (<h1>{u.login}</h1>))}
+          {this.state.error.map(e => (<div>{e.data}</div>))}
+          {this.state.message.map(m => (<div>{m.data}</div>))}
+          {this.state.token.map(t => (<div>{t.data}</div>))}
         </div>
       );
     }
